@@ -7,3 +7,5 @@ With our user-friendly interface, you can easily search and join existing RSOs, 
 Additionally, you can explore events created by other RSOs on the website, providing a comprehensive view of the campus community's happenings. From club meetings to social events to volunteer opportunities, there's always something exciting going on.
 
 Overall, our event website is the perfect hub for students to discover and engage with the vibrant student organization community on campus. Whether you're looking to join, create, or attend events, this platform offers everything you need to stay connected and get involved.
+
+![](https://drive.google.com/file/d/1ODdJDODPvAESV3V1YHEkeRFMmAnnOMue/view?usp=share_link)
