@@ -8,4 +8,4 @@ Additionally, you can explore events created by other RSOs on the website, provi
 
 Overall, our event website is the perfect hub for students to discover and engage with the vibrant student organization community on campus. Whether you're looking to join, create, or attend events, this platform offers everything you need to stay connected and get involved.
 
-![](https://drive.google.com/file/d/1Kbe_vESmtx_9INXfo882ajOL1UFxJ56R/view?usp=share_link)
+![image](https://drive.google.com/file/d/1Kbe_vESmtx_9INXfo882ajOL1UFxJ56R/view?usp=share_link)
