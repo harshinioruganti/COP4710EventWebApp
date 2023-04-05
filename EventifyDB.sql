@@ -75,6 +75,4 @@ CREATE TABLE university_images (
   picture BLOB NOT NULL,
   CONSTRAINT fk_university_images FOREIGN KEY (university_id) REFERENCES universities(university_id)
 );
-
-CREATE SCHEMA eventify AUTHORIZATION sys;
     
