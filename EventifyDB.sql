@@ -8,12 +8,6 @@ CREATE TABLE users (
     university_id NUMBER
 );
 
-ALTER TABLE users
-ADD CONSTRAINT check_user_level CHECK (user_type IN ('admin', 'superadmin', 'student')) --user_type has to be a student, admin, or super_admin
-
-ALTER TABLE users
-ADD CONSTRAINT fk_university_id FOREIGN KEY (university_id) REFERENCES universities(university_id);
-
 -- Create the table for universities
 CREATE TABLE universities (
     university_id NUMBER PRIMARY KEY,
@@ -23,6 +17,12 @@ CREATE TABLE universities (
     num_students NUMBER NOT NULL,
     super_admin_id NUMBER REFERENCES users(user_id) -- which super_admin created the rso
 );
+
+ALTER TABLE users
+ADD CONSTRAINT check_user_level CHECK (user_type IN ('admin', 'superadmin', 'student')) --user_type has to be a student, admin, or super_admin
+
+ALTER TABLE users
+ADD CONSTRAINT fk_university_id FOREIGN KEY (university_id) REFERENCES universities(university_id);
 
 -- Create the table for RSOs
 CREATE TABLE rsos (
