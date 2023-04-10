@@ -16,4 +16,4 @@ Overall, our event website is the perfect hub for students to discover and engag
 
 ER Diagram of Eventify Databases
 -
-![image](https://drive.google.com/uc?export=view&id=1501EogKhpTzCYl0kbm3fUXDRLHMBifcu)
+![image](https://drive.google.com/uc?export=view&id=1501EogKhpTzCYl0kbm3fUXDRLHMBifcu) 
