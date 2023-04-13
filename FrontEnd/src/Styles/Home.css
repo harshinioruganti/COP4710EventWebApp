@@ -1,0 +1,173 @@
+/* Article Description */ 
+@font-face {
+  font-family: "Book20";
+  src: local("SharpGroteskBook20"),
+   url("../Fonts/SharpGroteskBook20.otf") format("truetype");
+}
+
+/* Headers & Article Titles */ 
+@font-face {
+  font-family: "SemiBold15";
+  src: local("SharpGroteskSemiBold15"),
+   url("../Fonts/SharpGroteskSemiBold15.otf") format("truetype");
+}
+
+:root {
+  --mainColor: #000000; 
+}
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+figure {
+  border-radius: 10px;
+}
+
+.BannerNButton{
+  position: relative;
+  width: 100%;
+}
+
+.BannerNButton .banner {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+} 
+
+.BannerNButton .logBut{
+  position: absolute;
+  top: 52%;
+  left: 5.5%;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  font-family: "SemiBold15";
+  font-size: 1vw;
+  padding: 1% 2.5%;
+  border-color: #ffe600;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.BannerNButton .logBut:hover {
+  background-color: #ffe600;
+  box-shadow: 0px 15px 20px #ffffff;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.BannerNButton .regBut{
+  position: absolute;
+  top: 52%;
+  left: 15%;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  font-family: "SemiBold15";
+  font-size: 1vw;
+  padding: 1% 2%;
+  border-color: #ffe600;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.BannerNButton .regBut:hover {
+  background-color: #ffe600;
+  box-shadow: 0px 15px 20px #ffffff;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+h1 {
+  color: #ffffff;
+  font-family: "SemiBold15";
+  font-size: larger;
+  padding-top: 5%;
+  text-align: center;
+}
+
+/*
+Busted ass divider line
+hr {
+  background-color: #0a5ffc;
+  height: 10px;
+  width:50%;
+  padding-left: 30px;
+  text-align: center;
+}
+*/
+  .article-wrapper {
+    max-width: 400px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgb(41, 73, 143);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .article-wrapper:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .article-wrapper h2 {
+    color: #ffffff;
+    font-family: "SemiBold15";
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .article-wrapper p {
+    color: #ffffff;
+    font-family: "Book20";
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .article-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: "Book20";
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #96c3f3;
+    position: relative;
+  }
+  
+  .read-more:hover {
+    color: #ff9b05;
+  }
+  
+  .read-more svg {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 1px;
+    right: -20px;
+    fill: currentColor;
+  }
