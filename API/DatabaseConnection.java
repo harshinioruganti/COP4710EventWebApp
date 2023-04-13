@@ -4,9 +4,9 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     private Connection connection;
-    private final String url = "jdbc:oracle:thin:@localhost:1521:xe"; // replace with our database URL
-    private final String username = "your_username";
-    private final String password = "your_password";
+    private final String url = "jdbc:oracle:thin:@localhost:1521:orcl"; // our database URL
+    private final String username = "sys";
+    private final String password = "";
 
     public Connection getConnection() {
         try
