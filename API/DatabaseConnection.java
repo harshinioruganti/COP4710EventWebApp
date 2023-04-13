@@ -6,7 +6,7 @@ public class DatabaseConnection {
     private Connection connection;
     private final String url = "jdbc:oracle:thin:@localhost:1521:orcl"; // our database URL
     private final String username = "sys";
-    private final String password = "";
+    private final String password = "harshini";
 
     public Connection getConnection() {
         try
