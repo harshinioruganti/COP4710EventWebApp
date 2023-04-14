@@ -18,6 +18,14 @@ public class Rso
    @ManyToOne
    @JoinColumn(name = "admin_id")
    private User admin;
+
+   @ManyToMany
+   @JoinTable(
+        name="user_rso",
+        joinColumns = @JoinColumn(name = "rso_id"),
+        inverseJoinColumns = @JoinColumn(name="user_id"))
+    
+    private Set<User> users = new HashSet<>();
    
    public Rso()
    {
@@ -59,5 +67,15 @@ public class Rso
     public User getAdmin()
     {
         return admin;
+    }
+
+    public Set getUsers()
+    {
+        return users;
+    }
+
+    public void setUsers(Set<User> users)
+    {
+        this.users = users;
     }
 }

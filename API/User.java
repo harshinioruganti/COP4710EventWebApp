@@ -23,6 +23,9 @@ public class User
    
    @Column(name = "university_id")
    private int university_id;
+
+   @ManyToMany(mappedBy = "users")
+   private Set<Rso> rsos = new HashSet<>();
    
    private University university;
    
@@ -93,5 +96,15 @@ public class User
     public void setUniversity(University university)
     {
         this.university = university;
+    }
+
+    public HashSet<Rso> getRsos()
+    {
+        return rsos;
+    }
+
+    public void setRsos(Rso rsos) 
+    {
+        this.rsos = rsos;  
     }
 }
