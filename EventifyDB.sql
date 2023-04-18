@@ -1,6 +1,6 @@
 -- Create the table for users
 CREATE TABLE users (
-    user_id NUMBER PRIMARY KEY UNIQUE,
+    user_id NUMBER PRIMARY KEY,
     username VARCHAR2(50) NOT NULL UNIQUE,
     password VARCHAR2(50) NOT NULL,
     email VARCHAR2(50) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE users (
 
 -- Create the table for universities
 CREATE TABLE universities (
-    university_id NUMBER PRIMARY KEY UNIQUE,
+    university_id NUMBER PRIMARY KEY,
     university_name VARCHAR2(100) NOT NULL,
     location VARCHAR2(100) NOT NULL,
     email_domain VARCHAR2(50) NOT NULL,
@@ -34,12 +34,11 @@ CREATE TABLE rsos (
 
 -- Create the table for events
 CREATE TABLE events (
-    event_id NUMBER PRIMARY KEY UNIQUE,
+    event_id NUMBER PRIMARY KEY,
     event_name VARCHAR2(100) NOT NULL,
     category VARCHAR2(50) NOT NULL, -- public,  private, rso
     description VARCHAR2(500) NOT NULL,
-    event_time DATE NOT NULL,
-    event_date DATE NOT NULL,
+    event_date_and_time TIMESTAMP NOT NULL,
     location_name VARCHAR2(100) NOT NULL,
     latitude NUMBER(10,6) NOT NULL,
     longitude NUMBER(10,6) NOT NULL,
@@ -49,8 +48,6 @@ CREATE TABLE events (
     approval_status CHAR(1) DEFAULT 'Y' CHECK (approval_status IN ('Y', 'N')),
     rso_id NUMBER
 );
-
-
 
 ALTER TABLE events
 ADD CONSTRAINT event_category_level CHECK (category IN ('public', 'private', 'rso')) --category has to be public, private, rso
@@ -67,12 +64,16 @@ CREATE TABLE comments (
     rating NUMBER(1) DEFAULT 0
 );
 
+DROP TABLE comments;
+
 -- Create the table for event attendees
 CREATE TABLE event_attendees (
 user_id NUMBER REFERENCES users(user_id),
 event_id NUMBER REFERENCES events(event_id),
 PRIMARY KEY(user_id, event_id)
 );
+
+DROP TABLE event_attendees;
 
 -- Create the table for university images
 CREATE TABLE university_images (
