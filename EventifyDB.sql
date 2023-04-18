@@ -1,16 +1,16 @@
 -- Create the table for users
 CREATE TABLE users (
-    user_id NUMBER PRIMARY KEY,
+    user_id NUMBER PRIMARY KEY UNIQUE,
     username VARCHAR2(50) NOT NULL UNIQUE,
     password VARCHAR2(50) NOT NULL,
     email VARCHAR2(50) NOT NULL,
     user_type VARCHAR2(20) NOT NULL, --super admin, admin, student
-    university_id NUMBER
+    -- university_id NUMBER
 );
 
 -- Create the table for universities
 CREATE TABLE universities (
-    university_id NUMBER PRIMARY KEY,
+    university_id NUMBER PRIMARY KEY UNIQUE,
     university_name VARCHAR2(100) NOT NULL,
     location VARCHAR2(100) NOT NULL,
     email_domain VARCHAR2(50) NOT NULL,
@@ -26,7 +26,7 @@ ADD CONSTRAINT fk_university_id FOREIGN KEY (university_id) REFERENCES universit
 
 -- Create the table for RSOs
 CREATE TABLE rsos (
-    rso_id NUMBER PRIMARY KEY,
+    rso_id NUMBER PRIMARY KEY UNIQUE,
     rso_name VARCHAR2(100) NOT NULL,
     university_id NUMBER REFERENCES universities(university_id),
     admin_id NUMBER REFERENCES users(user_id) -- which admin created the rso
@@ -34,7 +34,7 @@ CREATE TABLE rsos (
 
 -- Create the table for events
 CREATE TABLE events (
-    event_id NUMBER PRIMARY KEY,
+    event_id NUMBER PRIMARY KEY UNIQUE,
     event_name VARCHAR2(100) NOT NULL,
     category VARCHAR2(50) NOT NULL, -- public,  private, rso
     description VARCHAR2(500) NOT NULL,
@@ -55,7 +55,7 @@ ADD CONSTRAINT fk_rso_id FOREIGN KEY (rso_id) REFERENCES rsos(rso_id);
 
 -- Create the table for comments
 CREATE TABLE comments (
-    comment_id NUMBER PRIMARY KEY,
+    comment_id NUMBER PRIMARY KEY UNIQUE,
     user_id NUMBER REFERENCES users(user_id),
     event_id NUMBER REFERENCES events(event_id),
     comment_text VARCHAR2(500) NOT NULL,
@@ -75,4 +75,10 @@ CREATE TABLE university_images (
   picture BLOB NOT NULL,
   CONSTRAINT fk_university_images FOREIGN KEY (university_id) REFERENCES universities(university_id)
 );
-    
+
+INSERT INTO users (user_id, username, password, email, user_type, university_id) 
+VALUES (1, 'johndoe', 'password123', 'johndoe@example.com', 'superadmin', 1);
+
+INSERT INTO universities (university_id, university_name, location, email_domain, num_students) 
+VALUES (1, 'University of Example', 'Example City', 'example.edu', 5000);
+
