@@ -50,6 +50,11 @@ CREATE TABLE events (
     rso_id NUMBER
 );
 
+
+
+ALTER TABLE events
+ADD CONSTRAINT event_category_level CHECK (category IN ('public', 'private', 'rso')) --category has to be public, private, rso
+
 ALTER TABLE events
 ADD CONSTRAINT fk_rso_id FOREIGN KEY (rso_id) REFERENCES rsos(rso_id);
 
