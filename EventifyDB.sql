@@ -57,7 +57,7 @@ ADD CONSTRAINT fk_rso_id FOREIGN KEY (rso_id) REFERENCES rsos(rso_id);
 
 -- Create the table for comments
 CREATE TABLE comments (
-    comment_id NUMBER PRIMARY KEY UNIQUE,
+    comment_id NUMBER PRIMARY KEY,
     user_id NUMBER REFERENCES users(user_id),
     event_id NUMBER REFERENCES events(event_id),
     comment_text VARCHAR2(500) NOT NULL,
